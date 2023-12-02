@@ -164,7 +164,7 @@ function saveScore() {
     const scoreData = { initials, score: time };
 
     // Retrieve current scores from local storage or initialize an empty array
-    let existingScores = JSON.parse(localStorage.getItem('quizScores')) || [];
+    let existingScores = JSON.parse(localStorage.getItem("quizScores")) || [];
 
     // Ensure existingScores is an array
     if (!Array.isArray(existingScores)) {
@@ -178,7 +178,7 @@ function saveScore() {
     existingScores.sort((a, b) => b.score - a.score);
 
     // Save the updated scores array back to local storage
-    localStorage.setItem('quizScores', JSON.stringify(existingScores));
+    localStorage.setItem("quizScores", JSON.stringify(existingScores));
 
     // Redirect to the high scores page
     window.location.href = './highscores.html';
