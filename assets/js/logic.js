@@ -22,6 +22,12 @@ startButton.addEventListener("click", startQuiz);
 choicesList.addEventListener("click", handleChoiceClick);
 // Even listener for the submit button
 submitButton.addEventListener("click", saveScore);
+// Event listener for the Enter key
+initialsInput.addEventListener("keyup", function(event) {
+    if (event.key === "Enter") {
+        saveScore();
+    }
+});
 
 // Function to start the quiz
 function startQuiz() {
@@ -136,6 +142,7 @@ function updateTimer() {
 // Function to end the quiz
 function endQuiz() {
     clearInterval(timerInterval); // Stop the timer
+    initialsInput.value = "";
     questionsContainer.classList.add("hide");
     endScreen.classList.remove("hide");
     time = Math.round(time)
@@ -147,6 +154,32 @@ function endQuiz() {
 // Function to save the score
 function saveScore() {
     const initials = initialsInput.value.toUpperCase();
-    // Save the score and initial to local storage
-    // Redirect to highscores.html
+
+    // Check if initials contain only letters
+    if (!/^[A-Z]+$/.test(initials)) {
+        alert("Please enter valid initials containing only letters.");
+        return;
+    }
+
+    const scoreData = { initials, score: time };
+
+    // Retrieve current scores from local storage or initialize an empty array
+    let existingScores = JSON.parse(localStorage.getItem('quizScores')) || [];
+
+    // Ensure existingScores is an array
+    if (!Array.isArray(existingScores)) {
+        existingScores = [];
+    }
+
+    // Add the new score data to the array
+    existingScores.push(scoreData);
+
+    // Sort the scores in descending order
+    existingScores.sort((a, b) => b.score - a.score);
+
+    // Save the updated scores array back to local storage
+    localStorage.setItem('quizScores', JSON.stringify(existingScores));
+
+    // Redirect to the high scores page
+    window.location.href = './highscores.html';
 }
