@@ -23,7 +23,7 @@ choicesList.addEventListener("click", handleChoiceClick);
 // Even listener for the submit button
 submitButton.addEventListener("click", saveScore);
 // Event listener for the Enter key
-initialsInput.addEventListener("keyup", function(event) {
+initialsInput.addEventListener("keyup", function (event) {
     if (event.key === "Enter") {
         saveScore();
     }
@@ -62,9 +62,6 @@ function displayQuestion() {
         button.textContent = `${index + 1}. ${choice}`;
         choicesList.appendChild(button);
     });
-
-    // Reset the answerChecked flag when displaying a new question
-    answerChecked = false;
 }
 
 // Function to handle choice button click
@@ -77,11 +74,6 @@ function handleChoiceClick(event) {
 
 // Function to check the answer
 function checkAnswer(selectAnswerIndex) {
-    // Check if the answer has already been checked
-    if (answerChecked) {
-        return;
-    }
-
     // Get the current question from the array of questions using its index
     const currentQuestion = questions[currentQuestionIndex];
 
@@ -97,25 +89,20 @@ function checkAnswer(selectAnswerIndex) {
         time = Math.max(0, time); // Ensure time doesn't go negative
         updateTimer();
     }
+    // Update the current question index
+    currentQuestionIndex++;
 
-    // Update the current question index after a delay
+    // Display the next question or end the quiz
+    if (currentQuestionIndex < questions.length) {
+        displayQuestion();
+    } else {
+        endQuiz();
+    }
+
     setTimeout(() => {
-        answerChecked = false; // Reset the flag
-        currentQuestionIndex++;
-
-        // Display the next question or end the quiz
-        if (currentQuestionIndex < questions.length) {
-            displayQuestion();
-        } else {
-            endQuiz();
-        }
-
         // Hide the feedback after displaying it
         feedbackElement.classList.add("hide");
-    }, 1500); // 1.5 seconds feedback display
-
-    // Set the flag to indicate that the answer has been checked
-    answerChecked = true;
+    }, 2000); // 2 seconds feedback display
 }
 
 // Function to display feedback
