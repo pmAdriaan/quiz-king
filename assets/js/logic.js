@@ -15,6 +15,7 @@ let currentQuestionIndex = 0;
 let timePenalty = 10;
 let time = timePenalty * questions.length;
 let timerInterval;
+let feedbackTimeout;
 
 // Event listener for the start button
 startButton.addEventListener("click", startQuiz);
@@ -74,6 +75,9 @@ function handleChoiceClick(event) {
 
 // Function to check the answer
 function checkAnswer(selectAnswerIndex) {
+    // Clear existing timeout
+    clearTimeout(feedbackTimeout);
+
     // Get the current question from the array of questions using its index
     const currentQuestion = questions[currentQuestionIndex];
 
@@ -99,7 +103,8 @@ function checkAnswer(selectAnswerIndex) {
         endQuiz();
     }
 
-    setTimeout(() => {
+    // Set a new timeout for hiding the feedback
+    feedbackTimeout = setTimeout(() => {
         // Hide the feedback after displaying it
         feedbackElement.classList.add("hide");
     }, 2000); // 2 seconds feedback display
