@@ -94,3 +94,20 @@ li:nth-child(odd) {
   top: 10px;
   right: 10px;
 }
+
+/* Background music controls */
+#audioControls {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+}
+
+#volumeContainer {
+  margin-right: 10px;
+}
+
+#volumeSlider {
+  width: 100px;
+}

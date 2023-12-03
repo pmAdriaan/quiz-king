@@ -39,6 +39,9 @@ function startQuiz() {
     // Show the questions screen
     questionsContainer.classList.remove("hide");
 
+    // Start playing the background music
+    backgroundMusic.play();
+
     // Start the timer and update it every second
     timerInterval = setInterval(updateTimer, 100);
 
@@ -83,6 +86,8 @@ function checkAnswer(selectAnswerIndex) {
 
     // Check if the selected answer matches the correct answer (true or false)
     const isCorrect = selectAnswerIndex === currentQuestion.correctAnswer;
+
+    playAnswerSFX(isCorrect);
 
     // Display feedback
     displayFeedback(isCorrect);
@@ -138,6 +143,9 @@ function endQuiz() {
     questionsContainer.classList.add("hide");
     endScreen.classList.remove("hide");
     time = Math.round(time)
+
+    // Start fading out the background music
+    fadeOutBackgroundMusic();
 
     // Update the final score display
     finalScoreDisplay.textContent = time;
