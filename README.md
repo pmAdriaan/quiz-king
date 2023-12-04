@@ -30,7 +30,7 @@
     - [🤖 Running Quiz King](#-running-quiz-king)
     - [🌐 Live Demo Quiz King](#-live-demo-quiz-king)
     - [📸 Quiz King Screenshot ](#-quiz-king-screenshot)
-- [🛣 Roadmap](#-roadmap)
+- [🛣 Project Roadmap](#-project-roadmap)
 - [🤝 Contributing](#-contributing)
 - [📄 License](#-license)
 
