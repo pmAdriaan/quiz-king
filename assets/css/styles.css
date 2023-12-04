@@ -1,10 +1,105 @@
+/* General styling for the entire body */
 body {
-  font-family: Arial;
-  font-size: 120%;
+  font-family: "Poppins", Arial;
+  font-size: 150%;
+  margin: 0;
+  background-color: #2c3e50;
+  color: #ffffff;
 }
 
+/* Header styling */
+.header {
+  background-color: #4a235a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  padding: 5px;
+}
+
+/* Hyperlinks in the header */
+.header a {
+  color: #ffd700;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+/* Hyperlinks in the header on hover */
+.header a:hover {
+  color: #64b5f6;
+}
+
+/* High scores crown icon hover */
+.scores:hover .fa-crown {
+  color: #6a5acd;
+  transition: color 0.2s;
+}
+
+/* Header Sections: scores, logo, timer */
+.scores,
+.logo,
+.timer {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Scores section positioning */
+.scores {
+  font-size: 30px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+/* Scores styling */
+.scores a {
+  display: flex;
+  align-items: center;
+}
+
+.scores i {
+  margin-right: 5px;
+}
+
+.logo img {
+  max-height: 50px;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+/* Timer section positioning */
+.timer {
+  font-size: 30px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+/* Timer styling */
+.timer i {
+  margin-right: 5px;
+  margin-left: 10px;
+}
+
+/* Wrapper styling */
+.wrapper {
+  margin: 100px auto 0 auto;
+  max-width: 800px;
+}
+
+/* Start section styling */
+.start {
+  text-align: center;
+}
+
+/* Other hyperlink styling */
 a {
-  color: #563d7c;
+  color: #ffd700;
   text-decoration: none;
   transition: color 0.1s;
 }
@@ -13,6 +108,7 @@ a:hover {
   color: #8570a5;
 }
 
+/* Button styling */
 button {
   display: inline-block;
   margin: 5px;
@@ -20,7 +116,7 @@ button {
   font-size: 100%;
   background-color: #563d7c;
   border-radius: 5px;
-  padding: 2px 10px;
+  padding: 8px 20px;
   color: white;
   border: 0;
   transition: background-color 0.1s;
@@ -30,14 +126,18 @@ button:hover {
   background-color: #8570a5;
 }
 
+/* Choices button styling */
 .choices button {
   display: block;
 }
 
+/* Text input styling */
 input[type="text"] {
   font-size: 100%;
+  padding: 5px;
 }
 
+/* Ordered list styling */
 ol {
   padding-left: 0px;
   max-height: 400px;
@@ -45,33 +145,20 @@ ol {
 }
 
 li {
-  padding: 5px;
+  padding: 10px;
   list-style: decimal inside none;
 }
 
 li:nth-child(odd) {
-  background-color: #f3edfc;
+  background-color: #4a235a;
 }
 
-.wrapper {
-  margin: 100px auto 0 auto;
-  max-width: 600px;
-}
-
+/* Hidden element styling */
 .hide {
   display: none;
 }
 
-.start {
-  text-align: center;
-}
-
-.scores {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-}
-
+/* Feedback styling */
 .feedback {
   font-style: italic;
   font-size: 120%;
@@ -81,21 +168,41 @@ li:nth-child(odd) {
   border-top: 2px solid #ccc;
 }
 
+/* Correct answer styling */
 .correct {
   color: green;
 }
 
+/* Incorrect answer styling */
 .incorrect {
   color: red;
 }
 
-.timer {
-  position: absolute;
-  top: 10px;
-  right: 10px;
+/* Final score color */
+#final-score {
+  color: greenyellow;
 }
 
-/* Background music controls */
+/* Icon styling */
+.fa-crown {
+  color: #ffd700;
+}
+
+.fa-clock {
+  color: #e74c3c;
+}
+
+/* Copyright styling */
+.copyright {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  font-size: 14px;
+  color: #ffffff;
+  opacity: 0.7;
+}
+
+/* Background music controls styling */
 #audioControls {
   position: fixed;
   bottom: 10px;
@@ -105,9 +212,11 @@ li:nth-child(odd) {
 }
 
 #volumeContainer {
-  margin-right: 10px;
+  display: flex;
+  align-items: center;
 }
 
 #volumeSlider {
-  width: 100px;
+  width: 150px;
+  margin: 0 10px;
 }

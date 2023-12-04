@@ -59,7 +59,7 @@ function toggleMuteSfx() {
 
 // Function to update music mute button text
 function updateMuteMusicButton() {
-    elements.muteToggleMusicButton.textContent = isMusicMuted ? "Music Off" : "Music On";
+    elements.muteToggleMusicButton.textContent = isMusicMuted ? "Music: Off" : "Music: On";
 }
 
 // Function to update SFX mute button text

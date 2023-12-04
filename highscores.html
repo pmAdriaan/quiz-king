@@ -1,21 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Highscores</title>
-        <link rel="stylesheet" href="./assets/css/styles.css">
-    </head>
-    <body>
-        <div class="wrapper">
-            <h1>Highscores</h1>
-            <ol id="highscores"></ol>
-            <a href="index.html">
-                <button>Go Back</button>
-            </a>
-            <button id="clear">Clear Highscores</button>
-        </div>
-        <script src="./assets/js/scores.js"></script>
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Highscores - Quiz King</title>
+    <!-- Google fonts-->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap" />
+    <!--Favicon-->
+    <link rel="icon" type="image/x-icon" href="./assets/images/favicon.png" />
+    <!--Styles-->
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+  </head>
+
+  <body>
+    <!--Header-->
+    <div class="header">
+      <div class="logo">
+        <a href="./">
+          <img src="./assets/images/logo.png" alt="Quiz King Logo" />
+        </a>
+      </div>
+    </div>
+
+    <!--Main-->
+    <div class="wrapper">
+      <h1>👑 Hall of Royalty: High Scores</h1>
+      <ol id="highscores"></ol>
+      <a href="index.html">
+        <button>Go Back</button>
+      </a>
+      <button id="clear">Clear Scores</button>
+    </div>
+
+    <!--Copyright notice-->
+    <div class="copyright">
+      &copy; 2023 Quiz King. All rights reserved.
+      <br />
+      Made with ❤️ by
+      <a href="https://mihaipirvu.dev" target="_blank">Mihai Pirvu.</a>
+    </div>
+
+    <!--Font Awesome Icons-->
+    <script
+      src="https://kit.fontawesome.com/16f53945bb.js"
+      crossorigin="anonymous"></script>
+
+    <!-- JavaScript -->
+    <script src="./assets/js/scores.js"></script>
+  </body>
 </html>
