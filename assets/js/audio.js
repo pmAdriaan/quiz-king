@@ -94,7 +94,7 @@ function fadeOutBackgroundMusic() {
             clearInterval(fadeOutInterval);
             elements.backgroundMusic.pause();
         }
-    }, 100); // fade out time interval
+    }, 200); // fade out time interval
 }
 
 // Function to save volume and mute state to local storage
