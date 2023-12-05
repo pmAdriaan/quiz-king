@@ -6,7 +6,7 @@ const backgroundMusicOptions = [
 ];
 
 // SFX Files
-const audioSettings = {
+const audioSfx = {
     correct: './assets/sfx/correct.wav',
     incorrect: './assets/sfx/incorrect.wav',
 };
@@ -74,7 +74,7 @@ function playAnswerSFX(isCorrect) {
     }
 
     const sfxVolume = elements.volumeSlider.value;
-    isCorrect ? playSFXWithVolume(audioSettings.correct, sfxVolume) : playSFXWithVolume(audioSettings.incorrect, sfxVolume);
+    isCorrect ? playSFXWithVolume(audioSfx.correct, sfxVolume) : playSFXWithVolume(audioSfx.incorrect, sfxVolume);
 }
 
 // Function to play SFX with specified volume
