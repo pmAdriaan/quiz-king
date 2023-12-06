@@ -26,11 +26,6 @@ body {
   transition: color 0.2s;
 }
 
-/* Hyperlinks in the header on hover */
-.header a:hover {
-  color: #64b5f6;
-}
-
 /* High scores crown icon hover */
 .scores:hover .fa-crown {
   color: #6a5acd;
@@ -129,6 +124,9 @@ button:hover {
 /* Choices button styling */
 .choices button {
   display: block;
+  margin: 0.5rem 0 0.5rem 0;
+  text-align: left;
+  padding-left: 10px;
 }
 
 /* Text input styling */
@@ -219,4 +217,73 @@ li:nth-child(odd) {
 #volumeSlider {
   width: 150px;
   margin: 0 10px;
+}
+
+/* Mobile */
+@media only screen and (max-width: 768px) {
+  body {
+    font-size: 100%;
+  }
+
+  .header {
+    height: auto;
+  }
+
+  .scores,
+  .logo,
+  .timer {
+    font-size: 1rem;
+  }
+
+  .logo img {
+    max-height: 2rem;
+  }
+
+  .scores,
+  .timer {
+    position: static;
+    text-align: center;
+  }
+
+  .wrapper {
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  #question-title,
+  .choices button {
+    margin: 1rem 10px;
+  }
+
+  .start {
+    padding: 0 20px;
+  }
+
+  ol {
+    max-height: none;
+  }
+
+  .copyright {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    text-align: left;
+  }
+
+  #volumeContainer {
+    margin: 20px 0;
+  }
+
+  #audioControls {
+    flex-direction: column;
+  }
+
+  #volumeSlider {
+    width: 80px;
+    margin: 10px 0;
+    transform: rotate(-90deg);
+  }
 }
