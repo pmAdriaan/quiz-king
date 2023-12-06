@@ -241,7 +241,6 @@ li:nth-child(odd) {
 
   .scores,
   .timer {
-    position: static;
     text-align: center;
   }
 

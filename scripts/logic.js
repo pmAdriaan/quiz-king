@@ -49,9 +49,20 @@ function startQuiz() {
     displayQuestion();
 }
 
+// Function to shuffle an array using Fisher-Yates algorithm
+function shuffleQuestions(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+
 // Function to display a question
 function displayQuestion() {
-    // Get the current question from the array of questions using its index
+    // Shuffle the array of questions
+    shuffleQuestions(questions);
+
+    // Get the current question from the shuffled array using its index
     const currentQuestion = questions[currentQuestionIndex];
 
     // Display question title
